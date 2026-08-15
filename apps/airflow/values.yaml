@@ -1,0 +1,27 @@
+# Values pour le chart Helm officiel apache-airflow/airflow
+# A référencer via `helm.valuesObject` dans l'Application ArgoCD (Helm 3 / chart apache-airflow)
+executor: "KubernetesExecutor"
+
+dags:
+  gitSync:
+    enabled: true
+    repo: https://github.com/<TON_USER>/ecommerce-gitops.git
+    branch: main
+    subPath: dags
+    depth: 1
+
+postgresql:
+  enabled: true
+
+webserver:
+  defaultUser:
+    enabled: true
+    username: admin
+    password: 12122005
+
+env:
+  - name: AIRFLOW_CONN_ECOMMERCE_DB
+    value: postgresql://ecommerce:12122005@postgres.ecommerce.svc.cluster.local:5432/ecommerce
+  - name: AIRFLOW_CONN_WAREHOUSE_DB
+    value: postgresql://warehouse:12122005@postgres.ecommerce.svc.cluster.local:5432/warehouse
+
