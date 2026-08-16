@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<TON_USER>/ecommerce-gitops.git
+    repoURL: https://github.com/rasolonjanahary/ecommerce-gitops.git
     targetRevision: main
     path: apps/postgres/base
   destination:

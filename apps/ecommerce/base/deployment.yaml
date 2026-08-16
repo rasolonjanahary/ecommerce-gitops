@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ecommerce
-          image: ghcr.io/<TON_USER>/ecommerce-app:latest
+          image: ghcr.io/rasolonjanahary/ecommerce-app:latest
           ports:
             - containerPort: 8000
           env:

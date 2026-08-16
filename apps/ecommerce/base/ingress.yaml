@@ -10,10 +10,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - monsite.com
+        - rasolo.ecommerce.com
       secretName: ecommerce-tls
   rules:
-    - host: monsite.com
+    - host: rasolo.ecommerce.com
       http:
         paths:
           - path: /

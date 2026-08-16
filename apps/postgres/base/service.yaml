@@ -19,4 +19,4 @@ metadata:
 type: Opaque
 stringData:
   username: ecommerce
-  password: CHANGE_ME_avec_un_secret_manager_ou_sealed-secrets
+  password: ecommerce
