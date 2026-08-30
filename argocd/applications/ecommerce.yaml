@@ -3,18 +3,23 @@ kind: Application
 metadata:
   name: ecommerce
   namespace: argocd
+
 spec:
   project: default
+
   source:
     repoURL: https://github.com/rasolonjanahary/ecommerce-gitops.git
     targetRevision: main
     path: apps/ecommerce/base
+
   destination:
     server: https://kubernetes.default.svc
     namespace: ecommerce
+
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+
     syncOptions:
       - CreateNamespace=true

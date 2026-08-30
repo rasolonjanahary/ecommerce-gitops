@@ -9,6 +9,15 @@ spec:
   project: default
 
   sources:
+
+    - repoURL: https://airflow.apache.org
+      chart: airflow
+      targetRevision: 1.15.0
+
+      helm:
+        valueFiles:
+          - $values/apps/airflow/values.yml
+
     - repoURL: https://github.com/rasolonjanahary/ecommerce-gitops.git
       targetRevision: main
       ref: values
