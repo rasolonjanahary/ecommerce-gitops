@@ -1,8 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
-name: ecommerce
-namespace: ecommerce
+  name: ecommerce
+  namespace: ecommerce
+    
 spec:
   replicas: 2
 
