@@ -14,7 +14,7 @@ dags:
 data:
   metadataConnection:
     user: airflow
-    pass: 12122005
+    pass: "12122005"
     protocol: postgresql
     host: postgres.ecommerce.svc.cluster.local
     port: 5432
@@ -24,7 +24,7 @@ webserver:
   defaultUser:
     enabled: true
     username: admin
-    password: 12122005
+    password: "12122005"
 
 env:
   - name: AIRFLOW_CONN_ECOMMERCE_DB
