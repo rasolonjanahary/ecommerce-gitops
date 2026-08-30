@@ -16,7 +16,7 @@ spec:
 
       helm:
         valueFiles:
-          - $values/apps/airflow/values.yml
+          - $values/apps/airflow/values.yaml
 
     - repoURL: https://github.com/rasolonjanahary/ecommerce-gitops.git
       targetRevision: main

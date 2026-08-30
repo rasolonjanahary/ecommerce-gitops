@@ -3,12 +3,13 @@ kind: Service
 metadata:
   name: ecommerce
   namespace: ecommerce
+
 spec:
+  type: ClusterIP
   selector:
     app: ecommerce
   ports:
     - name: http
+      protocol: TCP
       port: 80
       targetPort: 8000
-      protocol: TCP
-
