@@ -3,6 +3,17 @@ executor: KubernetesExecutor
 postgresql:
   enabled: true
 
+  image:
+    registry: docker.io
+    repository: postgres
+    tag: "16"
+
+  auth:
+    postgresPassword: "12122005"
+    username: "airflow"
+    password: "12122005"
+    database: "airflow"
+
 dags:
   gitSync:
     enabled: true
@@ -23,4 +34,3 @@ env:
 
   - name: AIRFLOW_CONN_WAREHOUSE_DB
     value: "postgresql://warehouse:12122005@postgres.ecommerce.svc.cluster.local:5432/warehouse"
-
