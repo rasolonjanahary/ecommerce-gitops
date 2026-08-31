@@ -1,7 +1,7 @@
 executor: KubernetesExecutor
 
 postgresql:
-  enabled: false
+  enabled: true
 
 dags:
   gitSync:
@@ -11,15 +11,6 @@ dags:
     subPath: dags
     depth: 1
 
-data:
-  metadataConnection:
-    user: airflow
-    pass: "12122005"
-    protocol: postgresql
-    host: postgres.ecommerce.svc.cluster.local
-    port: 5432
-    db: airflow
-
 webserver:
   defaultUser:
     enabled: true
@@ -28,7 +19,7 @@ webserver:
 
 env:
   - name: AIRFLOW_CONN_ECOMMERCE_DB
-    value: postgresql://ecommerce:12122005@postgres.ecommerce.svc.cluster.local:5432/ecommerce
+    value: "postgresql://ecommerce:12122005@postgres.ecommerce.svc.cluster.local:5432/ecommerce"
 
   - name: AIRFLOW_CONN_WAREHOUSE_DB
-    value: postgresql://warehouse:12122005@postgres.ecommerce.svc.cluster.local:5432/warehouse
+    value: "postgresql://warehouse:12122005@postgres.ecommerce.svc.cluster.local:5432/warehouse"
