@@ -18,7 +18,9 @@ spec:
         - name: postgres
           image: postgres:16-alpine
           ports:
-            - containerPort: 5432
+            - name: postgres 
+              containerPort: 5432
+              protocol: TCP
           env:
             - name: POSTGRES_DB
               value: ecommerce
@@ -35,9 +37,30 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /var/lib/postgresql/data
-              subPath: postgres
+              
             - name: init-script
               mountPath: /docker-entrypoint-initdb.d
+          readinessProbe: 
+            exec: 
+              command: 
+                - sh 
+                - -c 
+                - pg_isready -U "$POSTGRES_USER" -d "$POSTGRES_DB" 
+            initialDelaySeconds: 10 
+            periodSeconds: 10 
+            timeoutSeconds: 5 
+            failureThreshold: 6
+            
+          livenessProbe: 
+            exec: 
+              command: 
+                - sh 
+                - -c 
+                - pg_isready -U "$POSTGRES_USER" -d "$POSTGRES_DB" 
+            initialDelaySeconds: 30 
+            periodSeconds: 20 
+            timeoutSeconds: 5 
+            failureThreshold: 6
       volumes:
         - name: init-script
           configMap:
