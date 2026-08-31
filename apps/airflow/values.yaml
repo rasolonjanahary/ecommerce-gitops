@@ -16,7 +16,7 @@ data:
     user: airflow
     pass: "12122005"
     protocol: postgresql
-    host: postgres.ecommerce.svc.cluster.local
+    host: airflow-postgresql.airflow
     port: 5432
     db: airflow
 
