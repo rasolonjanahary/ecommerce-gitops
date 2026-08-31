@@ -23,3 +23,4 @@ env:
 
   - name: AIRFLOW_CONN_WAREHOUSE_DB
     value: "postgresql://warehouse:12122005@postgres.ecommerce.svc.cluster.local:5432/warehouse"
+
