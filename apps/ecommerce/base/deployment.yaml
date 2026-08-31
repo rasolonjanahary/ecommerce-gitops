@@ -18,6 +18,8 @@ spec:
         app: ecommerce
 
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: ecommerce
           image: ghcr.io/rasolonjanahary/e-commerce:latest
