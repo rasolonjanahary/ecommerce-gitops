@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: ecommerce
-          image: ghcr.io/rasolonjanahary/ecommerce-app:latest
+          image: ghcr.io/rasolonjanahary/e-commerce:latest
           imagePullPolicy: Always
 
           ports:

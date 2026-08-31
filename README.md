@@ -41,6 +41,8 @@ Pointer un enregistrement A de `monsite.com` vers l'IP externe du service
 tTPMHLfiOBcX9krl
 
 
+
+
 minikube start
   492  minikube kubectl -- get pods -A
   493  minikube kubectl namespaces
